@@ -210,21 +210,6 @@ EasyUpdater.Builder(this)
 
 
 
-## 🛠 混淆配置 (ProGuard)
-
-
-
-本库核心类无需混淆，如果你开启了严格混淆，请添加以下规则：
-
-```
--keep class com.github.yjz.easyupdater.** { *; }
--keep interface com.github.yjz.easyupdater.** { *; }
-```
-
-
-
-
-
 ## 📄 License
 
 
