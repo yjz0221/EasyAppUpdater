@@ -1,6 +1,6 @@
 
 buildscript {
-    ext.kotlin_version = "1.8.0" // 定义版本
+    ext.kotlin_version = "1.9.0" // 定义版本
 
     repositories {
         google()
@@ -10,7 +10,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:7.4.2"
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1' //gradle版本7以下 for JitPack
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
