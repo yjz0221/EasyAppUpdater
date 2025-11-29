@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="easy_upd_new_version">New Version: %s</string>
+    <string name="easy_upd_update_now">Update Now</string>
+    <string name="easy_upd_later">Later</string>
+    <string name="easy_upd_downloading">Downloading…</string>
+
+    <string name="easy_upd_perm_title">Permission Request</string>
+    <string name="easy_upd_perm_msg">To install the update, please allow installing unknown apps in settings.</string>
+    <string name="easy_upd_go_settings">Settings</string>
+    <string name="easy_upd_cancel">Cancel</string>
+
+    <string name="easy_upd_already_latest">Already the latest version</string>
+    <string name="easy_upd_parse_error">Failed to parse package</string>
+    <string name="easy_upd_download_error">Download failed</string>
+    <string name="easy_upd_check_error">Check failed</string>
+</resources>

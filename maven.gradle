@@ -1,0 +1,19 @@
+//  for JitPack：gradle版本7以下使用
+//apply plugin: 'com.github.dcendents.android-maven'
+//group='com.github.yjz'//依赖组名
+
+
+//for JitPack：适用于gradle版本7以及以上
+apply plugin: 'maven-publish'
+
+afterEvaluate{
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release     // 表示发布 release
+                groupId = 'com.github.yjz' // 这个是依赖库的组 id
+                artifactId = 'EasyAppUpdater'       // 依赖库的名称
+            }
+        }
+    }
+}
