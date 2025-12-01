@@ -54,11 +54,11 @@ interface IUpdateUI {
      * 显示"正在检查..."的加载框
      * 仅在手动检查模式下会被调用
      */
-    fun showCheckLoading()
+    fun showCheckLoading(){}
 
     /**
      * 关闭"正在检查..."的加载框
      */
-    fun dismissCheckLoading()
+    fun dismissCheckLoading(){}
 
 }
