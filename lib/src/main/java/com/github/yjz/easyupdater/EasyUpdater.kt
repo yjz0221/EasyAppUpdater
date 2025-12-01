@@ -130,6 +130,11 @@ class EasyUpdater private constructor(
         onNoUpdate: (() -> Unit)? = null,
         onError: ((Exception) -> Unit)? = null
     ) {
+        // 如果是手动检查，立即显示加载框
+        if (isManual) {
+            uiStrategy.showCheckLoading()
+        }
+
         activity.lifecycleScope.launch(Dispatchers.IO) {
             try {
                 val conn = URL(checkUrl).openConnection() as HttpURLConnection
@@ -185,6 +190,11 @@ class EasyUpdater private constructor(
                     try {
                         val info = parser.parse(jsonStr)
                         withContext(Dispatchers.Main) {
+                            // 请求成功，在处理结果前，先关闭加载框
+                            if (isManual) {
+                                uiStrategy.dismissCheckLoading()
+                            }
+
                             if (info.hasUpdate) {
                                 // === 有更新 ===
                                 uiStrategy.showUpdateDialog(
@@ -212,6 +222,11 @@ class EasyUpdater private constructor(
             } catch (e: Exception) {
                 e.printStackTrace()
                 withContext(Dispatchers.Main) {
+                    // 发生异常，先关闭加载框，再报错误
+                    if (isManual) {
+                        uiStrategy.dismissCheckLoading()
+                    }
+
                     // === 发生错误 ===
                     if (onError != null) {
                         onError(e) // 用户自定义处理

@@ -47,4 +47,18 @@ interface IUpdateUI {
      * 显示轻量级提示 (用于显示"已是最新版"或"检查失败")
      */
     fun showToast(msg: String)
+
+
+    /**
+     * 手动模式，外部可以在此显示检查更新中提示框
+     * 显示"正在检查..."的加载框
+     * 仅在手动检查模式下会被调用
+     */
+    fun showCheckLoading()
+
+    /**
+     * 关闭"正在检查..."的加载框
+     */
+    fun dismissCheckLoading()
+
 }
